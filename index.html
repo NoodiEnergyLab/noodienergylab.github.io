@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NORDIC ENERGY PROTOCOL | TAMPERE</title>
+    <meta name="description" content="Entropy is a choice. We choose Order. Nordic Energy Intelligence.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- CORE SETTINGS (VACUUM ENVIRONMENT) --- */
+        :root {
+            --true-black: #000000;
+            --cold-white: #F0F0F0;
+            --electric-blue: rgba(0, 85, 255, 0.35);
+            --dim-gray: #666666;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--true-black);
+            color: var(--cold-white);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden; /* 禁止横向滚动 */
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- THE AURORA (极光流体) --- */
+        .aurora-orb {
+            position: fixed;
+            top: 20%;
+            left: 50%;
+            width: 60vw;
+            height: 60vw;
+            background: radial-gradient(circle, var(--electric-blue) 0%, rgba(0,0,0,0) 70%);
+            transform: translate(-50%, -50%);
+            filter: blur(120px);
+            z-index: -1;
+            animation: breathe 10s infinite alternate;
+            opacity: 0.6;
+        }
+
+        @keyframes breathe {
+            0% { transform: translate(-50%, -50%) scale(1); opacity: 0.4; }
+            100% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.7; }
+        }
+
+        /* --- SECTIONS (五层炼狱) --- */
+        section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            position: relative;
+        }
+
+        /* --- TYPOGRAPHY (冷峻排版) --- */
+        h1, h2 {
+            text-transform: uppercase;
+            letter-spacing: 0.15em; /* 字间距拉大 */
+            line-height: 1.2;
+            font-weight: 600;
+        }
+
+        p {
+            font-weight: 300;
+            line-height: 1.6;
+            letter-spacing: 0.05em;
+            color: #cccccc;
+            max-width: 600px;
+            margin-top: 1.5rem;
+        }
+
+        /* --- ANIMATION CLASSES (滚动浮现) --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1); /* 优雅的缓动曲线 */
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- SPECIFIC SECTION STYLES --- */
+        
+        /* Section 1: Hero */
+        .hero-title {
+            font-size: clamp(2rem, 5vw, 5rem); /* 响应式字体 */
+            text-align: center;
+        }
+        .hero-subtitle {
+            font-size: clamp(1rem, 2vw, 2rem);
+            color: var(--dim-gray);
+            margin-top: 1rem;
+            text-align: center;
+        }
+        .location-tag {
+            position: absolute;
+            bottom: 3rem;
+            font-size: 0.7rem;
+            letter-spacing: 0.3em;
+            color: var(--dim-gray);
+            text-transform: uppercase;
+        }
+
+        /* Section 2: Split / Text Heavy */
+        .text-section {
+            align-items: flex-start;
+            text-align: left;
+            padding-left: 10vw;
+            padding-right: 10vw;
+        }
+        .section-title {
+            font-size: clamp(1.5rem, 3vw, 3rem);
+            border-left: 2px solid var(--electric-blue);
+            padding-left: 20px;
+        }
+
+        /* Section 5: The Gate (Form) */
+        .access-form {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 400px;
+            margin-top: 3rem;
+        }
+
+        input {
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid var(--cold-white);
+            color: white;
+            padding: 1rem 0;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            border-bottom: 1px solid #0055ff;
+        }
+
+        input::placeholder {
+            color: var(--dim-gray);
+        }
+
+        button {
+            margin-top: 2rem;
+            background: transparent;
+            border: 1px solid var(--cold-white);
+            color: var(--cold-white);
+            padding: 1rem 2rem;
+            font-family: 'Inter', sans-serif;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        button:hover {
+            background: var(--cold-white);
+            color: var(--true-black);
+        }
+        
+        footer {
+            padding: 2rem;
+            font-size: 0.7rem;
+            color: var(--dim-gray);
+            text-align: center;
+            letter-spacing: 0.1em;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .text-section {
+                padding-left: 5vw;
+                padding-right: 5vw;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="aurora-orb"></div>
+
+    <section>
+        <h1 class="hero-title reveal">Entropy is a choice.</h1>
+        <div class="hero-subtitle reveal" style="transition-delay: 0.2s;">We choose Order.</div>
+        <div class="location-tag reveal" style="transition-delay: 0.5s;">Nordic Energy Intelligence // Tampere, Finland</div>
+    </section>
+
+    <section class="text-section">
+        <h2 class="section-title reveal">The Thermodynamic Ceiling</h2>
+        <p class="reveal" style="transition-delay: 0.2s;">
+            The era of "More" is dead.<br><br>
+            Asia's growth is colliding with the limits of physics. Data centers are burning. Grids are failing. Capital is trapped.<br><br>
+            You are running an obsolete operating system on a dying planet.
+        </p>
+    </section>
+
+    <section class="text-section" style="align-items: flex-end; text-align: right;">
+        <h2 class="section-title reveal" style="border-left: none; border-right: 2px solid var(--electric-blue); padding-left: 0; padding-right: 20px;">Born in the Polar Night</h2>
+        <p class="reveal" style="transition-delay: 0.2s;">
+            While the world panics, we calculate.<br><br>
+            We have forged an AI protocol in the frozen silence of Tampere. It does not just monitor energy. It dominates it.<br><br>
+            <strong style="color: white;">Zero Emissions. Absolute Efficiency. Human Irrelevant.</strong>
+        </p>
+    </section>
+
+    <section>
+        <h2 class="hero-title reveal" style="font-size: 3rem;">The Decoupling</h2>
+        <p class="reveal" style="text-align: center;">
+            We offer the only path to decouple economic growth from carbon liability.<br>
+            This is not a service. It is an infrastructure update for civilization.
+        </p>
+    </section>
+
+    <section>
+        <h2 class="section-title reveal" style="border: none; padding: 0;">Secure Your Node</h2>
+        <p class="reveal" style="text-align: center; font-size: 0.9rem;">
+            We are currently deploying the protocol to select strategic partners in Singapore.<br>
+            Allocation is limited by physics, not capital.
+        </p>
+        
+        <form class="access-form reveal" style="transition-delay: 0.2s;">
+            <input type="email" placeholder="INSTITUTIONAL EMAIL ADDRESS" required>
+            <button type="submit">Request Access</button>
+        </form>
+    </section>
+
+    <footer>
+        © 2026 NORDIC PROTOCOL. TAMPERE. HELSINKI. SINGAPORE.<br>
+        SILENCE IS THE SOUND OF EFFICIENCY.
+    </footer>
+
+    <script>
+        // 观察者逻辑：当元素进入视口时，添加 'active' 类以触发上浮动画
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1 // 元素出现10%时触发
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // 简单的表单拦截（防止页面跳转，增强神秘感）
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = this.querySelector('button');
+            const originalText = btn.innerText;
+            
+            btn.innerText = "VERIFYING PROTOCOL...";
+            btn.style.opacity = "0.5";
+            
+            setTimeout(() => {
+                btn.innerText = "ACCESS PENDING REVIEW";
+                btn.style.border = "1px solid #00ff00";
+                btn.style.color = "#00ff00";
+            }, 1500);
+        });
+    </script>
+</body>
+</html>
