@@ -33,24 +33,46 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* --- THE AURORA (极光流体) --- */
+        /* --- THE AURORA (加强版极光) --- */
         .aurora-orb {
             position: fixed;
-            top: 20%;
+            top: 30%;
             left: 50%;
+            width: 80vw; /* 变大 */
+            height: 80vw;
+            /* 颜色增强：不透明度从 0.35 提升到 0.8 */
+            background: radial-gradient(circle, rgba(0, 85, 255, 0.8) 0%, rgba(0, 0, 0, 0) 60%);
+            transform: translate(-50%, -50%);
+            filter: blur(80px); /* 模糊度稍微降低一点，让边缘更清晰一点 */
+            z-index: -1; /* 确保在文字后面 */
+            opacity: 0.8; /* 整体不透明度提升 */
+            pointer-events: none; /* 确保鼠标能透过它点击 */
+            mix-blend-mode: screen; /* 让光效更亮 */
+            animation: breathe 8s infinite alternate ease-in-out;
+        }
+        
+        /* 新增：第二团副光球，制造流动感 */
+        .aurora-orb-2 {
+            position: fixed;
+            bottom: 10%;
+            right: -10%;
             width: 60vw;
             height: 60vw;
-            background: radial-gradient(circle, var(--electric-blue) 0%, rgba(0,0,0,0) 70%);
-            transform: translate(-50%, -50%);
-            filter: blur(120px);
+            background: radial-gradient(circle, rgba(0, 255, 200, 0.4) 0%, rgba(0, 0, 0, 0) 60%); /* 加一点青色 */
+            filter: blur(100px);
             z-index: -1;
-            animation: breathe 10s infinite alternate;
-            opacity: 0.6;
+            opacity: 0.5;
+            animation: drift 15s infinite alternate linear;
         }
 
         @keyframes breathe {
-            0% { transform: translate(-50%, -50%) scale(1); opacity: 0.4; }
-            100% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.7; }
+            0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.5; }
+            100% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.9; }
+        }
+        
+        @keyframes drift {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            100% { transform: translate(-20px, -50px) rotate(10deg); }
         }
 
         /* --- SECTIONS (五层炼狱) --- */
